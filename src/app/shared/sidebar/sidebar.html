@@ -1,5 +1,8 @@
 <div class="row mx-3 py-2 align-items-center g-2">
-    <a class="btn btn-warning" routerLink="/" routerLinkActive="active">Home</a>
-    <a class="btn btn-warning" routerLink="/usuarios" routerLinkActive="active">Usuarios</a>
-    <a class="btn btn-warning" routerLink="/stocks" routerLinkActive="active">Stocks</a>
+    <ng-container *ngIf="authService.currentUserValue">
+        <a class="btn btn-warning" routerLink="/" routerLinkActive="active">Home</a>
+        <a class="btn btn-warning" routerLink="/usuarios" routerLinkActive="active">Usuarios</a>
+        <a class="btn btn-warning" routerLink="/stocks" routerLinkActive="active">Stocks</a>
+        <button class="btn btn-danger" (click)="authService.logout()">Logout</button>
+    </ng-container>
 </div>

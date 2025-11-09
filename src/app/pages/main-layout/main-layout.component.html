@@ -1,12 +1,18 @@
-<div class="row bg-black text-white">
-  <p>Topbar</p>
-</div>
+<ng-container *ngIf="!authService.currentUserValue">
+  <router-outlet></router-outlet>
+</ng-container>
 
-<div class="row">
-  <div class="col-2 bg-black text-white" style="height: 100vh">
-    <app-sidebar></app-sidebar>
+<ng-container *ngIf="authService.currentUserValue">
+  <div class="row bg-black text-white">
+    <p>Topbar</p>
   </div>
-  <div class="col-10">
-    <router-outlet></router-outlet>
+
+  <div class="row">
+    <div class="col-2 bg-black text-white" style="height: 100vh">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-10">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</div>
+</ng-container>
