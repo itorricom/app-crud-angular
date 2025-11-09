@@ -1,0 +1,26 @@
+<h1>
+    {{stockAddTitle()}}
+</h1>
+
+<span>Desde el signal: {{this.name()}} </span>
+
+<input 
+type="text" 
+class="form-control"
+placeholder="Nombre"
+[value]="this.name()"
+(change)="this.name.set(txtName.value)"
+#txtName
+>
+<!-- <input 
+type="number" 
+class="form-control"
+placeholder="Cantidad"
+>
+
+<button 
+class="btn btn-primary mt-3"
+(click)="AddStock()"
+>
+Agregar
+</button> -->
