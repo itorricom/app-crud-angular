@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, output, signal } from '@angular/core';
+import { Stock } from '../../interfaces/stock.interface';
 
 @Component({
   selector: 'stock-add',
@@ -8,13 +9,23 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StockAdd {
-  public stockAddTitle = signal<string>('Agregar Nuevo Stock');
+  stockAddTitle = signal<string>("Agregar stock");
+  public name = signal("Gafete");
+  public quantity = signal(10);
+  OnNewStock = output<Stock>();
 
-  public name = signal<string>('Gafete');
-  public quantity = signal<number>(100);
+  addStock(){
+    const newStock: Stock = {
+      id: Math.floor(Math.random() * 100),
+      name: this.name(),
+      quantity: this.quantity()
+    }
+    this.OnNewStock.emit(newStock);
+    this.resetInputs();
+  }
 
-  AddStock() {
-    console.log('Hola stock add');
-    
+  resetInputs(){
+    this.name.set('');
+    this.quantity.set(0);
   }
 }

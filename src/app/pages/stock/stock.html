@@ -3,10 +3,9 @@
 
 <div class="row">
     <div class="col">
-        <stock-add></stock-add>
-
+        <stock-add (OnNewStock)="onNewStock($event)"></stock-add>
     </div>
     <div class="col">
-        <!-- <stock-list></stock-list> -->
+        <stock-list [stockList]="stockService.stocklist()"></stock-list>
     </div>
 </div>
