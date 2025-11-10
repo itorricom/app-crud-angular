@@ -12,21 +12,6 @@ export const routes: Routes = [
                 canActivate: [authGuard]
             },
             {
-                path: 'stocks',
-                loadComponent: () => import('./pages/stock/stock'),
-                canActivate: [authGuard]
-            },
-            {
-                path: 'stock-reactive',
-                loadComponent: () => import('./pages/stock-reactive/stock-reactive'),
-                canActivate: [authGuard]
-            },
-            {
-                path: 'forms',
-                loadComponent: () => import('./pages/reactive-forms/reactive-forms'),
-                canActivate: [authGuard]
-            },
-            {
                 path: 'users',
                 loadChildren: () => import('./pages/user/user.routes'),
                 canActivate: [authGuard, adminGuard]
