@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullname": "Admin User",
+      "username": "admin",
+      "password": "admin123",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "fullname": "John Doe",
+      "username": "john",
+      "password": "john123",
+      "role": "USER"
+    }
+  ],
+  "stocks": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "quantity": 5
+    },
+    {
+      "id": 2,
+      "name": "Escritorio",
+      "quantity": 10
+    },
+    {
+      "id": 3,
+      "name": "Silla",
+      "quantity": 30
+    }
+  ]
+}
