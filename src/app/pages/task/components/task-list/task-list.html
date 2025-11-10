@@ -1,0 +1,93 @@
+<div class="row text-center my-4">
+  <h1>📋 Gestión de Tareas</h1>
+</div>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12 text-end">
+      <button class="btn btn-primary btn-lg" (click)="onAddTask()">
+        ➕ Nueva Tarea
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-hover table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col" style="width: 50px">#</th>
+              <th scope="col" style="width: 80px">Estado</th>
+              <th scope="col">Título</th>
+              <th scope="col">Descripción</th>
+              <th scope="col" style="width: 100px">Prioridad</th>
+              <th scope="col" style="width: 120px">Fecha Límite</th>
+              <th scope="col" style="width: 150px">Creado Por</th>
+              <th scope="col" style="width: 250px">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (task of tasks$ | async; track task.id) {
+            <tr [class.table-success]="task.status === 'COMPLETADA'">
+              <th scope="row">{{ task.id }}</th>
+              <td>
+                <span [ngClass]="getStatusClass(task.status)">
+                  {{ task.status }}
+                </span>
+              </td>
+              <td>
+                <strong [style.text-decoration]="task.status === 'COMPLETADA' ? 'line-through' : 'none'">
+                  {{ task.title }}
+                </strong>
+              </td>
+              <td>{{ task.description }}</td>
+              <td>
+                <span [ngClass]="getPriorityClass(task.priority)">
+                  {{ task.priority }}
+                </span>
+              </td>
+              <td>{{ task.dueDate | date:'dd/MM/yyyy' }}</td>
+              <td>{{ task.createdBy | titlecase }}</td>
+              <td>
+                <button 
+                  class="btn btn-sm me-1" 
+                  [class.btn-success]="task.status !== 'COMPLETADA'"
+                  [class.btn-secondary]="task.status === 'COMPLETADA'"
+                  (click)="onToggleComplete(task)"
+                  [disabled]="isDeleting() === task.id"
+                  title="Marcar como completada">
+                  {{ task.status === 'COMPLETADA' ? '↩️' : '✅' }}
+                </button>
+                <button 
+                  class="btn btn-warning btn-sm me-1" 
+                  (click)="onEditTask(task.id)"
+                  [disabled]="isDeleting() === task.id"
+                  title="Editar">
+                  ✏️
+                </button>
+                <button 
+                  class="btn btn-danger btn-sm" 
+                  (click)="onDeleteTask(task.id)"
+                  [disabled]="isDeleting() === task.id"
+                  title="Eliminar">
+                  {{ isDeleting() === task.id ? '⏳' : '🗑️' }}
+                </button>
+              </td>
+            </tr>
+            } @empty {
+            <tr>
+              <td colspan="8" class="text-center py-5">
+                <h4>No hay tareas registradas</h4>
+                <p class="text-muted">Comienza creando tu primera tarea</p>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
