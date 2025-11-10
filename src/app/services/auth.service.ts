@@ -39,7 +39,6 @@ export class AuthService {
   logout() {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
-    window.location.href = '/login';
   }
 
   isAdmin(): boolean {
