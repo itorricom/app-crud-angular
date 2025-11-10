@@ -1,33 +1,33 @@
 {
   "users": [
     {
-      "id": 1,
-      "fullname": "Admin User",
-      "username": "admin",
-      "password": "admin123",
+      "id": "3",
+      "fullname": "Isidoro Torrico M.",
+      "username": "itorrico",
+      "password": "itorrico",
       "role": "ADMIN"
     },
     {
-      "id": 2,
-      "fullname": "John Doe",
-      "username": "john",
-      "password": "john123",
+      "id": "4",
+      "fullname": "Jairo Siles Vargas",
+      "username": "jsiles",
+      "password": "jairo",
       "role": "USER"
     }
   ],
   "stocks": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Laptop",
       "quantity": 5
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Escritorio",
       "quantity": 10
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Silla",
       "quantity": 30
     }

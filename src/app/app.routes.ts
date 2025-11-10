@@ -20,6 +20,10 @@ export const routes: Routes = [
             {
                 path: 'forms',
                 loadComponent: () => import('./pages/reactive-forms/reactive-forms')
+            },
+            {
+                path: 'users',
+                loadChildren: () => import('./pages/user/user.routes')
             }
         ]
     },
