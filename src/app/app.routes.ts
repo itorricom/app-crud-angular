@@ -12,6 +12,11 @@ export const routes: Routes = [
                 canActivate: [authGuard]
             },
             {
+                path: 'tasks',
+                loadChildren: () => import('./pages/task/task.routes'),
+                canActivate: [authGuard]
+            },
+            {
                 path: 'users',
                 loadChildren: () => import('./pages/user/user.routes'),
                 canActivate: [authGuard, adminGuard]
