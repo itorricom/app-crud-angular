@@ -10,12 +10,12 @@ export const routes: Routes = [
                 loadComponent: () => import('./pages/home/home')
             },
             {
-                path: 'usuario',
-                loadComponent: () => import('./pages/usuario/usuario')
-            },
-            {
                 path: 'stocks',
                 loadComponent: () => import('./pages/stock/stock')
+            },
+            {
+                path: 'forms',
+                loadComponent: () => import('./pages/reactive-forms/reactive-forms')
             }
         ]
     },
