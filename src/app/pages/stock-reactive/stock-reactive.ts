@@ -17,7 +17,7 @@ export default class StockReactive implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private stockService: StockService
+    public stockService: StockService
   ) {
     // Inicializar el formulario con validaciones
     this.stockForm = this.fb.group({
@@ -44,9 +44,14 @@ export default class StockReactive implements OnInit {
       return;
     }
 
+    // Obtener el último ID y generar el siguiente
+    const stocks = this.stockService.stocklist();
+    const lastId = stocks.length > 0 ? Math.max(...stocks.map(s => s.id)) : 0;
+    const newId = lastId + 1;
+
     // Crear el objeto stock
     const newStock: Stock = {
-      id: Math.floor(Math.random() * 10000),
+      id: newId,
       name: this.stockForm.value.name,
       quantity: this.stockForm.value.quantity
     };
