@@ -5,7 +5,7 @@ Proyecto desarrollado con Angular 20
 ## Descripción del Proyecto
 
 Aplicación web que implementa:
-- Gestión de Stock con formularios reactivos
+- Gestión de Tareas con formularios reactivos
 - Validaciones
 - Persistencia de datos con localStorage
 - JSON Server para API REST simulada
