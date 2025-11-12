@@ -3,12 +3,12 @@ import { TaskService } from '../../../../services/task.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Task, Status } from '../../../../interfaces/task.interface';
-import { AsyncPipe, TitleCasePipe, DatePipe } from '@angular/common';
+import { AsyncPipe, TitleCasePipe, DatePipe, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [AsyncPipe, TitleCasePipe, DatePipe],
+  imports: [AsyncPipe, TitleCasePipe, DatePipe, NgClass],
   templateUrl: './task-list.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
