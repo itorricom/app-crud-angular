@@ -1,5 +1,5 @@
 <div class="row text-center my-4">
-  <h1> Nueva Tarea</h1>
+  <h1>Nueva Tarea</h1>
 </div>
 
 <div class="container">
@@ -9,7 +9,7 @@
         <div class="card-body p-4">
           <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
             <div class="mb-3">
-              <label for="title" class="form-label">Título de la Tarea *</label>
+              <label for="title" class="form-label">Titulo de la Tarea *</label>
               <input type="text" class="form-control" 
                 [class.is-invalid]="isFieldInvalid('title')" id="title"
                 formControlName="title" placeholder="Ej: Completar informe mensual">
@@ -19,11 +19,11 @@
             </div>
 
             <div class="mb-3">
-              <label for="description" class="form-label">Descripción *</label>
+              <label for="description" class="form-label">Descripcion *</label>
               <textarea class="form-control" rows="4"
                 [class.is-invalid]="isFieldInvalid('description')" id="description"
                 formControlName="description" 
-                placeholder="Describe los detalles de la tarea..."></textarea>
+                placeholder="Describe los detalles..."></textarea>
               <div class="invalid-feedback" *ngIf="isFieldInvalid('description')">
                 {{ getErrorMessage('description') }}
               </div>
@@ -39,9 +39,6 @@
                     {{ priority }}
                   </option>
                 </select>
-                <div class="invalid-feedback" *ngIf="isFieldInvalid('priority')">
-                  {{ getErrorMessage('priority') }}
-                </div>
               </div>
 
               <div class="col-md-4 mb-3">
@@ -53,13 +50,10 @@
                     {{ status }}
                   </option>
                 </select>
-                <div class="invalid-feedback" *ngIf="isFieldInvalid('status')">
-                  {{ getErrorMessage('status') }}
-                </div>
               </div>
 
               <div class="col-md-4 mb-3">
-                <label for="dueDate" class="form-label">Fecha Límite *</label>
+                <label for="dueDate" class="form-label">Fecha Limite *</label>
                 <input type="date" class="form-control" 
                   [class.is-invalid]="isFieldInvalid('dueDate')" 
                   id="dueDate" formControlName="dueDate">
@@ -76,7 +70,7 @@
               </button>
               <button type="submit" class="btn btn-primary btn-lg" 
                 [disabled]="isSubmitting">
-                {{ isSubmitting ? '⏳ Guardando...' : '💾 Guardar Tarea' }}
+                {{ isSubmitting ? 'Guardando...' : 'Guardar Tarea' }}
               </button>
             </div>
           </form>

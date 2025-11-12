@@ -40,7 +40,7 @@ export default class TaskCreate {
     if (this.taskForm.valid) {
       this.isSubmitting = true;
       
-      // Auto-incrementar ID
+      // obtener id para la nueva tarea
       this.taskService.getTasks().subscribe({
         next: (tasks) => {
           const newId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id)) + 1 : 1;
@@ -51,15 +51,15 @@ export default class TaskCreate {
               this.isSubmitting = false;
               this.router.navigate(['/tasks']);
             },
-            error: (error) => {
-              console.error('Error al crear tarea:', error);
+            error: (err) => {
+              console.error('Error creando:', err);
               this.isSubmitting = false;
-              alert('Error al crear la tarea');
+              alert('No se pudo crear la tarea');
             }
           });
         },
-        error: (error) => {
-          console.error('Error al obtener tareas:', error);
+        error: (err) => {
+          console.error('Error:', err);
           this.isSubmitting = false;
         }
       });
@@ -82,10 +82,10 @@ export default class TaskCreate {
   getErrorMessage(fieldName: string): string {
     const field = this.taskForm.get(fieldName);
     if (field?.hasError('required')) {
-      return 'Este campo es requerido';
+      return 'Campo requerido';
     }
     if (field?.hasError('minlength')) {
-      return `Mínimo ${field.errors?.['minlength'].requiredLength} caracteres`;
+      return `Minimo ${field.errors?.['minlength'].requiredLength} caracteres`;
     }
     return '';
   }

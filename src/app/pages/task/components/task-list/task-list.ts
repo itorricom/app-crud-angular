@@ -19,6 +19,7 @@ export default class TaskList {
   public tasks$: Observable<Task[]> = this.taskService.getTasks();
   public isDeleting = signal<number | null>(null);
 
+  // navegar para crear nueva tarea
   onAddTask(): void{
     this.router.navigate(['/tasks/create-task']);
   }
@@ -28,7 +29,7 @@ export default class TaskList {
   }
 
   onDeleteTask(id: number): void {
-    if (confirm('¿Está seguro que desea eliminar esta tarea?')) {
+    if(confirm('¿Seguro que desea eliminar esta tarea?')) {
       this.isDeleting.set(id);
       this.taskService.deleteTask(id).subscribe({
         next: () => {
@@ -36,9 +37,9 @@ export default class TaskList {
           this.isDeleting.set(null);
         },
         error: (error) => {
-          console.error('Error al eliminar tarea:', error);
+          console.error('Error eliminando:', error);
           this.isDeleting.set(null);
-          alert('Error al eliminar la tarea');
+          alert('No se pudo eliminar la tarea');
         }
       });
     }
@@ -53,8 +54,8 @@ export default class TaskList {
       next: () => {
         this.tasks$ = this.taskService.getTasks();
       },
-      error: (error) => {
-        console.error('Error al actualizar tarea:', error);
+      error: (err) => {
+        console.error('Error actualizando:', err);
       }
     });
   }

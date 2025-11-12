@@ -49,10 +49,10 @@ export default class TaskById implements OnInit {
         this.taskForm.patchValue(task);
         this.isLoading = false;
       },
-      error: (error) => {
-        console.error('Error al cargar tarea:', error);
+      error: (err) => {
+        console.error('Error cargando:', err);
         this.isLoading = false;
-        alert('Error al cargar la tarea');
+        alert('No se pudo cargar la tarea');
         this.router.navigate(['/tasks']);
       }
     });
@@ -68,10 +68,10 @@ export default class TaskById implements OnInit {
           this.isSubmitting = false;
           this.router.navigate(['/tasks']);
         },
-        error: (error) => {
-          console.error('Error al actualizar tarea:', error);
+        error: (err) => {
+          console.error('Error actualizando:', err);
           this.isSubmitting = false;
-          alert('Error al actualizar la tarea');
+          alert('No se pudo actualizar');
         }
       });
     } else {
@@ -93,10 +93,10 @@ export default class TaskById implements OnInit {
   getErrorMessage(fieldName: string): string {
     const field = this.taskForm.get(fieldName);
     if (field?.hasError('required')) {
-      return 'Este campo es requerido';
+      return 'Campo requerido';
     }
     if (field?.hasError('minlength')) {
-      return `Mínimo ${field.errors?.['minlength'].requiredLength} caracteres`;
+      return `Minimo ${field.errors?.['minlength'].requiredLength} caracteres`;
     }
     return '';
   }

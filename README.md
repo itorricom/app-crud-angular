@@ -1,12 +1,12 @@
-# App Proyecto Final - CRUD Angular
+# Proyecto Final - CRUD Angular - Modulo 2
 
 Proyecto desarrollado con Angular 20
 
 ## Descripción del Proyecto
 
 Aplicación web que implementa:
-- Gestión de Stock con formularios tradicionales y reactivos
-- Validaciones en tiempo real
+- Gestión de Stock con formularios reactivos
+- Validaciones
 - Persistencia de datos con localStorage
 - JSON Server para API REST simulada
 
@@ -19,7 +19,7 @@ Antes de comenzar, asegúrate de tener instalado:
 
 ## Instalación
 
-1. **Clonar el repositorio:**
+1. **Clonar el repositorio ->  branch: proyecto-final**
 ```bash
 git clone https://github.com/itorricom/app-crud-angular.git
 cd app-crud-angular
@@ -45,7 +45,7 @@ Esto iniciará JSON Server en `http://localhost:3000`
 
 **Endpoints disponibles:**
 - `http://localhost:3000/users` - Gestión de usuarios
-- `http://localhost:3000/stocks` - Gestión de stocks
+- `http://localhost:3000/tasks` - Gestión de tareas
 
 ### 2. Servidor de Desarrollo Angular
 

@@ -1,14 +1,14 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "fullname": "Isidoro Torrico M.",
       "username": "itorrico",
       "password": "itorrico",
       "role": "ADMIN"
     },
     {
-      "id": 2,
+      "id": "2",
       "fullname": "Jairo Siles Vargas",
       "username": "jsiles",
       "password": "jairo",
@@ -17,27 +17,27 @@
   ],
   "tasks": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Completar proyecto Angular",
-      "description": "Desarrollar sistema CRUD de tareas con autenticación y guards para el proyecto final del curso",
+      "description": "desarrollar sistema CRUD de tareas con autenticacion y guards para el proyecto final",
       "priority": "ALTA",
       "status": "EN_PROCESO",
       "dueDate": "2025-11-10",
       "createdBy": "itorrico"
     },
     {
-      "id": 2,
-      "title": "Revisar documentación",
-      "description": "Actualizar el README con todas las instrucciones de instalación y uso del sistema",
+      "id": "2",
+      "title": "Revisar documentacion",
+      "description": "actualizar el README con instrucciones de instalacion y uso",
       "priority": "MEDIA",
       "status": "PENDIENTE",
       "dueDate": "2025-11-10",
       "createdBy": "itorrico"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Implementar unit tests",
-      "description": "Agregar pruebas unitarias básicas para los servicios principales: AuthService y TaskService",
+      "description": "agregar pruebas unitarias basicas para los servicios AuthService y TaskService",
       "priority": "ALTA",
       "status": "PENDIENTE",
       "dueDate": "2025-11-10",
@@ -45,21 +45,12 @@
     },
     {
       "id": 4,
-      "title": "Realizar merge a main",
-      "description": "Una vez finalizado el proyecto, hacer merge de la rama proyecto-final a main",
-      "priority": "BAJA",
-      "status": "PENDIENTE",
-      "dueDate": "2025-11-10",
+      "title": "Completar proyecto modulo 2",
+      "description": "aplicar el conocimiento adquirido en el curso",
+      "priority": "ALTA",
+      "status": "EN_PROCESO",
+      "dueDate": "2025-11-11",
       "createdBy": "itorrico"
-    },
-    {
-      "id": 5,
-      "title": "Preparar presentación",
-      "description": "Crear slides explicando la arquitectura y funcionalidades del sistema de gestión de tareas",
-      "priority": "MEDIA",
-      "status": "COMPLETADA",
-      "dueDate": "2025-11-09",
-      "createdBy": "jsiles"
     }
   ]
 }

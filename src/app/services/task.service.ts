@@ -10,6 +10,7 @@ export class TaskService {
   private httprequest = inject(HttpClient);
   public url: string = 'http://localhost:3000/tasks';
 
+  // obtener todas las tareas
   getTasks(): Observable<Task[]> {
     return this.httprequest.get<Task[]>(this.url);
   }
@@ -26,7 +27,7 @@ export class TaskService {
     return this.httprequest.put<Task>(`${this.url}/${id}`, task);
   }
 
-  deleteTask(id: number): Observable<void> {
+  deleteTask(id: number): Observable<void>{
     return this.httprequest.delete<void>(`${this.url}/${id}`);
   }
 }
